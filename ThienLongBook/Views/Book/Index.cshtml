@@ -1,0 +1,257 @@
+﻿@using ThienLongBook.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<ThienLongBook.Models.Sach>
+
+@{
+    ViewBag.Title = "Sách chủ để";
+    Layout = "~/Views/Shared/_LayoutMainNone.cshtml";
+}
+@{
+    var chuDe = TempData["dsChuDe"] as List<ThienLongBook.Models.ChuDe>;
+}
+
+<div class="tg-innerbanner tg-haslayout tg-parallax tg-bginnerbanner" data-z-index="-100" data-appear-top-offset="600" data-parallax="scroll" data-image-src="/Content/images/parallax/bgparallax-07.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="tg-innerbannercontent">
+                    <h1>Sách</h1>
+                    <ol class="tg-breadcrumb">
+                        <li><a href="javascript:void(0);">Trang Chủ</a></li>
+                        <li class="tg-active">Sách</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--************************************
+        Inner Banner End
+*************************************-->
+<!--************************************
+        Main Start
+*************************************-->
+<main id="tg-main" class="tg-main tg-haslayout">
+    <!--************************************
+            News Grid Start
+    *************************************-->
+    <div class="tg-sectionspace tg-haslayout">
+        <div class="container">
+            <div class="row">
+                <div id="tg-twocolumns" class="tg-twocolumns">
+                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9 pull-right">
+                        <div id="tg-content" class="tg-content">
+                            <div class="tg-products">
+                                <div class="tg-sectionhead">
+                                    <h2><span>People’s Choice</span>Bestselling Books</h2>
+                                </div>
+                                <div class="tg-productgrid">
+                                    <div class="tg-refinesearch">
+                                        <form class="tg-formtheme tg-formsortshoitems">
+                                            <fieldset>
+                                                <div class="form-group">
+                                                    <label>sort by:</label>
+                                                    <span class="tg-select">
+                                                        <select>
+                                                            <option>name</option>
+                                                            <option>name</option>
+                                                            <option>name</option>
+                                                        </select>
+                                                    </span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>show:</label>
+                                                    <span class="tg-select">
+                                                        <select>
+                                                            <option>8</option>
+                                                            <option>16</option>
+                                                            <option>20</option>
+                                                        </select>
+                                                    </span>
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                    </div>
+
+                                    @foreach (var i in Model)
+                                    {
+                                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3">
+                                            <div class="tg-postbook">
+                                                <figure class="tg-featureimg">
+                                                    <div class="tg-bookimg">
+                                                        <div class="tg-frontcover"><img src="~/Content/Sach/@i.maCD/@i.hinhMinhHoa" alt="image description"></div>
+                                                        <div class="tg-backcover"><img src="~/Content/Sach/@i.maCD/@i.hinhMinhHoa" alt="image description"></div>
+                                                    </div>
+                                                    <a class="tg-btnaddtowishlist" href="javascript:void(0);">
+                                                        <i class="icon-heart"></i>
+                                                        <span>add to wishlist</span>
+                                                    </a>
+                                                </figure>
+                                                <div class="tg-postbookcontent">
+                                                    <ul class="tg-bookscategories">
+                                                        <li>
+                                                            <a href="">
+                                                                @switch (i.maCD)
+                                                                {
+                                                                    case "SBC":<a href="@Url.Action("SachChuDe","Book", new { maCD = i.ChuDe })">Sách Bán Chạy</a> break;
+                                                                    case "SGK": <a href="@Url.Action("SachChuDe","Book", new { maCD = i.ChuDe })">Sách Giáo Khoa</a>break;
+                                                                    case "SKD": <a href="@Url.Action("SachChuDe","Book", new { maCD = i.ChuDe })">Sách Kinh Doanh</a>break;
+                                                                    case "SKNS": <a href="@Url.Action("SachChuDe","Book", new { maCD = i.ChuDe })">Sách Kỹ Năng Sống</a>break;
+                                                                    case "SLT": <a href="@Url.Action("SachChuDe","Book", new { maCD = i.ChuDe })">Sách Luyện Thi THPT Quốc Gia</a>break;
+                                                                    case "SM": <a href="@Url.Action("SachChuDe","Book", new { maCD = i.ChuDe })">Sách Mới</a>break;
+                                                                    case "SNN": <a href="@Url.Action("SachChuDe","Book", new { maCD = i.ChuDe })">Sách Ngoại Ngữ</a>break;
+                                                                    case "STK": <a href="@Url.Action("SachChuDe","Book", new { maCD = i.ChuDe })">Sách Tham Khảo</a>break;
+                                                                }
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
+                                                    <div class="tg-booktitle">
+                                                        <h3><a href="@Url.Action("SachChiTiet","Book", new {maSach = i.maSach})">@i.tenSach</a></h3>
+                                                    </div>
+                                                    <span class="tg-bookwriter">
+                                                        Xuất bản: <a>
+                                                            @switch (i.maNXB.ToString())
+                                                            {
+                                                                case "NXBGDVN":<a href="@Url.Action("SachNXB","Book", new { maNXB = i.maNXB })">Nhà xuất bản Giáo dục Việt Nam</a> break;
+                                                                case "NXBHNV": <a href="@Url.Action("SachNXB","Book", new {maNXB = i.maNXB })">Nhà xuất bản Hội Nhà Văn</a>break;
+                                                                case "NXBKD": <a href="@Url.Action("SachNXB","Book", new { maNXB = i.maNXB })">Nhà xuất bản Kim Đồng</a>break;
+                                                                case "NXBT": <a href="@Url.Action("SachNXB","Book", new { maNXB = i.maNXB})">Nhà xuất bản Trẻ</a>break;
+                                                                case "NXBTHTPHCM": <a href="@Url.Action("SachNXB","Book", new { maNXB = i.maNXB})">Nhà xuất bản Tổng hợp thành phố Hồ Chí Minh</a>break;
+                                                            }
+                                                        </a>
+                                                    </span>
+                                                    <span class="tg-stars"><span></span></span>
+                                                    <span class="tg-bookprice">
+                                                        <ins>@i.donGia@i.donViTinh</ins>
+                                                        <del></del>
+                                                    </span>
+                                                    <a class="tg-btn tg-btnstyletwo" href="@Url.Action("SachChiTiet","Book", new {maSach = i.maSach})">
+                                                        <i class="fa fa-shopping-basket"></i>
+                                                        <em>Thêm vào giỏ</em>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+
+                                </div>
+                                @*Tạo liên kết các trang*@
+                                Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+                                <div class="MenuTrang">
+                                    @Html.PagedListPager(Model, page => Url.Action("SachChuDe", new
+                                    {
+                                        page = page
+                                    }))
+                                </div>
+                                <style>
+                                    .MenuTrang {
+                                        display: inline;
+                                        text-align: center;
+                                    }
+                                </style>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 pull-left">
+                        <aside id="tg-sidebar" class="tg-sidebar">
+                            <div class="tg-widget tg-widgetsearch">
+                                <form class="tg-formtheme tg-formsearch">
+                                    <div class="form-group">
+                                        <button type="submit"><i class="icon-magnifier"></i></button>
+                                        <input type="search" name="search" class="form-group" placeholder="Tìm kiếm bằng tên, tác giả,...!">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tg-widget tg-catagories">
+                                <div class="tg-widgettitle">
+                                    <h3>Thể loại sách</h3>
+                                </div>
+                                <div class="tg-widgetcontent">
+                                    <ul>
+                                        @foreach (var i in chuDe)
+                                        {
+                                            <li>
+                                                <a href="javascript:void(0);">
+                                                    <span>
+                                                        @switch (i.maCD)
+                                                        {
+                                                            case "SBC":<a href="@Url.Action("SachChuDe","Book", new {maCD = i.maCD})">Sách Bán Chạy</a> break;
+                                                            case "SGK": <a href="@Url.Action("SachChuDe","Book", new {maCD = i.maCD})">Sách Giáo Khoa</a>break;
+                                                            case "SKD": <a href="@Url.Action("SachChuDe","Book", new {maCD = i.maCD})">Sách Kinh Doanh</a>break;
+                                                            case "SKNS": <a href="@Url.Action("SachChuDe","Book", new {maCD = i.maCD})">Sách Kỹ Năng Sống</a>break;
+                                                            case "SLT": <a href="@Url.Action("SachChuDe","Book", new {maCD = i.maCD})">Sách Luyện Thi THPT Quốc Gia</a>break;
+                                                            case "SM": <a href="@Url.Action("SachChuDe","Book", new {maCD = i.maCD})">Sách Mới</a>break;
+                                                            case "SNN": <a href="@Url.Action("SachChuDe","Book", new {maCD = i.maCD})">Sách Ngoại Ngữ</a>break;
+                                                            case "STK": <a href="@Url.Action("SachChuDe","Book", new {maCD = i.maCD})">Sách Tham Khảo</a>break;
+                                                        }
+                                                    </span><em></em>
+                                                </a>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="tg-widget tg-widgettrending">
+                                <div class="tg-widgettitle">
+                                    <h3>Trending Products</h3>
+                                </div>
+                                <div class="tg-widgetcontent">
+                                    <ul>
+                                        <li>
+                                            <article class="tg-post">
+                                                <figure><a href="javascript:void(0);"><img src="images/products/img-04.jpg" alt="image description"></a></figure>
+                                                <div class="tg-postcontent">
+                                                    <div class="tg-posttitle">
+                                                        <h3><a href="javascript:void(0);">Where The Wild Things Are</a></h3>
+                                                    </div>
+                                                    <span class="tg-bookwriter">By: <a href="javascript:void(0);">Kathrine Culbertson</a></span>
+                                                </div>
+                                            </article>
+                                        </li>
+                                        <li>
+                                            <article class="tg-post">
+                                                <figure><a href="javascript:void(0);"><img src="images/products/img-05.jpg" alt="image description"></a></figure>
+                                                <div class="tg-postcontent">
+                                                    <div class="tg-posttitle">
+                                                        <h3><a href="javascript:void(0);">Where The Wild Things Are</a></h3>
+                                                    </div>
+                                                    <span class="tg-bookwriter">By: <a href="javascript:void(0);">Kathrine Culbertson</a></span>
+                                                </div>
+                                            </article>
+                                        </li>
+                                        <li>
+                                            <article class="tg-post">
+                                                <figure><a href="javascript:void(0);"><img src="images/products/img-06.jpg" alt="image description"></a></figure>
+                                                <div class="tg-postcontent">
+                                                    <div class="tg-posttitle">
+                                                        <h3><a href="javascript:void(0);">Where The Wild Things Are</a></h3>
+                                                    </div>
+                                                    <span class="tg-bookwriter">By: <a href="javascript:void(0);">Kathrine Culbertson</a></span>
+                                                </div>
+                                            </article>
+                                        </li>
+                                        <li>
+                                            <article class="tg-post">
+                                                <figure><a href="javascript:void(0);"><img src="images/products/img-07.jpg" alt="image description"></a></figure>
+                                                <div class="tg-postcontent">
+                                                    <div class="tg-posttitle">
+                                                        <h3><a href="javascript:void(0);">Where The Wild Things Are</a></h3>
+                                                    </div>
+                                                    <span class="tg-bookwriter">By: <a href="javascript:void(0);">Kathrine Culbertson</a></span>
+                                                </div>
+                                            </article>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
