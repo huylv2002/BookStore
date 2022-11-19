@@ -1,0 +1,42 @@
+﻿@using ThienLongBook.Models;
+@model List<ThienLongBook.Models.GioHang>
+
+
+<div class="dropdown tg-themedropdown tg-minicartdropdown">
+    <a href="javascript:void(0);" id="tg-minicart" class="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="tg-themebadge"></span>
+        <!--<i class="icon-cart"></i>--><i><img src="~/Content/images/basket3.svg" /></i>
+        <span>Giỏ Hàng (@ViewBag.tongSoLuong)</span>
+    </a>
+    <div class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-minicart">
+        <div class="tg-minicartbody">
+           @for(var i  = 0; i<Model.Count(); i++)
+            {
+                <div class="tg-minicarproduct">
+                    <figure>
+                        <img src="~/Content/Sach/@Model[i].iMaCD/@Model[i].sAnhBia" style="width: 70px; height: 80px" alt="image description">
+
+                    </figure>
+                    <div class="tg-minicarproductdata">
+                        <h5><a href="javascript:void(0);">@Model[i].sTenSach</a></h5>
+                        <h6><a href="javascript:void(0);">@Model[i].dDonGia đ</a></h6>
+                    </div>
+                </div>
+            }
+
+            
+        </div>
+        <div class="tg-minicartfoot">
+            <a class="tg-btnemptycart" href="@Url.Action("XoaTatCaTrongGio", "Cart")">
+                <i class="fa fa-trash-o"></i>
+                <span>Xóa tất cả sản phẩm</span>
+            </a>
+            <span class="tg-subtotal">Tổng: <strong>@ViewBag.tongTien</strong></span>
+            <div class="tg-btns">
+                <a class="tg-btn tg-active" href="@Url.Action("GioHang", "Cart")">Xem giỏ hàng</a>
+                <a class="tg-btn" href="javascript:void(0);">Kiểm tra</a>
+            </div>
+        </div>
+    </div>
+</div>
+

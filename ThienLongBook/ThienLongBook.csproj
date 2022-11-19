@@ -137,63 +137,61 @@
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\BookController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ADMIN.cs">
-      <DependentUpon>SachData.tt</DependentUpon>
+      <DependentUpon>SachDT.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ChiTietDatHang.cs">
-      <DependentUpon>SachData.tt</DependentUpon>
+      <DependentUpon>SachDT.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ChiTietThamDo.cs">
-      <DependentUpon>SachData.tt</DependentUpon>
+      <DependentUpon>SachDT.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ChuDe.cs">
-      <DependentUpon>SachData.tt</DependentUpon>
+      <DependentUpon>SachDT.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DonDatHang.cs">
-      <DependentUpon>SachData.tt</DependentUpon>
+      <DependentUpon>SachDT.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\KhachHang.cs">
-      <DependentUpon>SachData.tt</DependentUpon>
+      <DependentUpon>SachDT.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NhaXuatBan.cs">
-      <DependentUpon>SachData.tt</DependentUpon>
+      <DependentUpon>SachDT.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\QuangCao.cs">
-      <DependentUpon>SachData.tt</DependentUpon>
+      <DependentUpon>SachDT.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Sach.cs">
-      <DependentUpon>SachData.tt</DependentUpon>
+      <DependentUpon>SachDT.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SachData.Context.cs">
+    <Compile Include="Models\SachDT.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SachData.Context.tt</DependentUpon>
+      <DependentUpon>SachDT.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SachData.cs">
+    <Compile Include="Models\SachDT.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SachData.tt</DependentUpon>
+      <DependentUpon>SachDT.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SachData.Designer.cs">
+    <Compile Include="Models\SachDT.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SachData.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>SachData.tt</DependentUpon>
+      <DependentUpon>SachDT.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\TacGia.cs">
-      <DependentUpon>SachData.tt</DependentUpon>
+      <DependentUpon>SachDT.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ThamDo.cs">
-      <DependentUpon>SachData.tt</DependentUpon>
+      <DependentUpon>SachDT.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\VietSach.cs">
-      <DependentUpon>SachData.tt</DependentUpon>
+      <DependentUpon>SachDT.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -202,6 +200,56 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\cart\css\bootstrap-grid.css" />
+    <Content Include="Content\cart\css\bootstrap-grid.min.css" />
+    <Content Include="Content\cart\css\bootstrap-reboot.css" />
+    <Content Include="Content\cart\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\cart\css\bootstrap.css" />
+    <Content Include="Content\cart\css\bootstrap.min.css" />
+    <Content Include="Content\cart\css\style.css" />
+    <Content Include="Content\cart\css\style.min.css" />
+    <Content Include="Content\cart\img\carousel-1.jpg" />
+    <Content Include="Content\cart\img\carousel-2.jpg" />
+    <Content Include="Content\cart\img\carousel-3.jpg" />
+    <Content Include="Content\cart\img\cat-1.jpg" />
+    <Content Include="Content\cart\img\cat-2.jpg" />
+    <Content Include="Content\cart\img\cat-3.jpg" />
+    <Content Include="Content\cart\img\cat-4.jpg" />
+    <Content Include="Content\cart\img\offer-1.jpg" />
+    <Content Include="Content\cart\img\offer-2.jpg" />
+    <Content Include="Content\cart\img\payments.png" />
+    <Content Include="Content\cart\img\product-1.jpg" />
+    <Content Include="Content\cart\img\product-2.jpg" />
+    <Content Include="Content\cart\img\product-3.jpg" />
+    <Content Include="Content\cart\img\product-4.jpg" />
+    <Content Include="Content\cart\img\product-5.jpg" />
+    <Content Include="Content\cart\img\product-6.jpg" />
+    <Content Include="Content\cart\img\product-7.jpg" />
+    <Content Include="Content\cart\img\product-8.jpg" />
+    <Content Include="Content\cart\img\product-9.jpg" />
+    <Content Include="Content\cart\img\user.jpg" />
+    <Content Include="Content\cart\img\vendor-1.jpg" />
+    <Content Include="Content\cart\img\vendor-2.jpg" />
+    <Content Include="Content\cart\img\vendor-3.jpg" />
+    <Content Include="Content\cart\img\vendor-4.jpg" />
+    <Content Include="Content\cart\img\vendor-5.jpg" />
+    <Content Include="Content\cart\img\vendor-6.jpg" />
+    <Content Include="Content\cart\img\vendor-7.jpg" />
+    <Content Include="Content\cart\img\vendor-8.jpg" />
+    <Content Include="Content\cart\lib\animate\animate.min.css" />
+    <Content Include="Content\cart\lib\easing\easing.js" />
+    <Content Include="Content\cart\lib\easing\easing.min.js" />
+    <Content Include="Content\cart\lib\owlcarousel\assets\ajax-loader.gif" />
+    <Content Include="Content\cart\lib\owlcarousel\assets\owl.carousel.css" />
+    <Content Include="Content\cart\lib\owlcarousel\assets\owl.carousel.min.css" />
+    <Content Include="Content\cart\lib\owlcarousel\assets\owl.theme.default.css" />
+    <Content Include="Content\cart\lib\owlcarousel\assets\owl.theme.default.min.css" />
+    <Content Include="Content\cart\lib\owlcarousel\assets\owl.theme.green.css" />
+    <Content Include="Content\cart\lib\owlcarousel\assets\owl.theme.green.min.css" />
+    <Content Include="Content\cart\lib\owlcarousel\assets\owl.video.play.png" />
+    <Content Include="Content\cart\lib\owlcarousel\owl.carousel.js" />
+    <Content Include="Content\cart\lib\owlcarousel\owl.carousel.min.js" />
+    <Content Include="Content\Icon\check-mark.png" />
     <Content Include="Content\Icon\contact.png" />
     <Content Include="Content\Icon\expand-button.png" />
     <Content Include="Content\Icon\heart.png" />
@@ -317,6 +365,36 @@
     <Content Include="Content\images\ui-icons_cc0000_256x240.html" />
     <Content Include="Content\images\ui-icons_ffffff_256x240.html" />
     <Content Include="Content\images\users\img-01.jpg" />
+    <Content Include="Content\User\vendor\animate\animate.css" />
+    <Content Include="Content\User\vendor\animsition\css\animsition.css" />
+    <Content Include="Content\User\vendor\animsition\css\animsition.min.css" />
+    <Content Include="Content\User\vendor\animsition\js\animsition.js" />
+    <Content Include="Content\User\vendor\animsition\js\animsition.min.js" />
+    <Content Include="Content\User\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Content\User\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Content\User\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Content\User\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\User\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\User\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\User\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\User\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\User\vendor\bootstrap\js\popper.js" />
+    <Content Include="Content\User\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Content\User\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Content\User\vendor\countdowntime\countdowntime.js" />
+    <Content Include="Content\User\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Content\User\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Content\User\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="Content\User\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="Content\User\vendor\daterangepicker\moment.js" />
+    <Content Include="Content\User\vendor\daterangepicker\moment.min.js" />
+    <Content Include="Content\User\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Content\User\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Content\User\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Content\User\vendor\select2\select2.css" />
+    <Content Include="Content\User\vendor\select2\select2.js" />
+    <Content Include="Content\User\vendor\select2\select2.min.css" />
+    <Content Include="Content\User\vendor\select2\select2.min.js" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\Sach\SGK\an-nhac-lop-2.jpg" />
     <Content Include="Content\Sach\SGK\dao-duc-1.jpg" />
@@ -371,11 +449,21 @@
     <Content Include="Content\Sach\STK\giai-vo-bai-tap-toan-3.jpg" />
     <Content Include="Content\Sach\Them\img-2.png" />
     <Content Include="Content\Tn\logo.png" />
+    <Content Include="Content\User\css\main.css" />
+    <Content Include="Content\User\css\util.css" />
+    <Content Include="Content\User\images\icons\favicon.ico" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fonts\fontawesome-webfont3e6e.svg" />
     <Content Include="fonts\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\fonts\icomoonbd7d.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="fonts\User\fonts\iconic\css\material-design-iconic-font.css" />
+    <Content Include="fonts\User\fonts\iconic\css\material-design-iconic-font.min.css" />
+    <Content Include="fonts\User\fonts\iconic\fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\css\bootstrap.min.css" />
@@ -389,15 +477,15 @@
     <Content Include="Content\css\owl.carousel.css" />
     <Content Include="Content\css\responsive.css" />
     <Content Include="Content\css\transitions.css" />
-    <Content Include="Models\SachData.Context.tt">
+    <Content Include="Models\SachDT.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SachData.edmx</DependentUpon>
-      <LastGenOutput>SachData.Context.cs</LastGenOutput>
+      <DependentUpon>SachDT.edmx</DependentUpon>
+      <LastGenOutput>SachDT.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\SachData.tt">
+    <Content Include="Models\SachDT.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SachData.edmx</DependentUpon>
-      <LastGenOutput>SachData.cs</LastGenOutput>
+      <DependentUpon>SachDT.edmx</DependentUpon>
+      <LastGenOutput>SachDT.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -414,14 +502,171 @@
     <Content Include="fonts\fonts\icomoonbd7d.eot" />
     <Content Include="fonts\fonts\icomoonbd7d.ttf" />
     <Content Include="fonts\fonts\icomoonbd7d.woff" />
-    <EntityDeploy Include="Models\SachData.edmx">
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="fonts\User\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="fonts\User\fonts\iconic\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="fonts\User\fonts\iconic\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="fonts\User\fonts\iconic\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="fonts\User\fonts\iconic\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="fonts\User\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="fonts\User\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="fonts\User\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="fonts\User\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="fonts\User\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="fonts\User\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="fonts\User\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="fonts\User\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="fonts\User\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="fonts\User\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="fonts\User\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="fonts\User\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="fonts\User\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="fonts\User\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="fonts\User\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="fonts\User\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="fonts\User\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="fonts\User\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Content\User\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Content\User\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\User\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\User\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\User\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\User\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\cart\scss\bootstrap\scss\bootstrap-grid.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\bootstrap-reboot.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\bootstrap.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_alert.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_background-variant.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_badge.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_box-shadow.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_breakpoints.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_buttons.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_caret.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_clearfix.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_deprecate.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_float.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_forms.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_gradients.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_grid-framework.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_grid.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_hover.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_image.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_list-group.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_lists.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_nav-divider.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_pagination.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_reset-text.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_resize.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_screen-reader.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_size.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_table-row.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_text-emphasis.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_text-hide.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_text-truncate.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_transition.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\mixins\_visibility.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\utilities\_align.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\utilities\_background.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\utilities\_borders.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\utilities\_clearfix.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\utilities\_display.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\utilities\_embed.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\utilities\_flex.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\utilities\_float.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\utilities\_interactions.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\utilities\_overflow.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\utilities\_position.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\utilities\_screenreaders.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\utilities\_shadows.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\utilities\_sizing.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\utilities\_spacing.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\utilities\_stretched-link.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\utilities\_text.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\utilities\_visibility.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\vendor\_rfs.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_alert.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_badge.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_breadcrumb.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_button-group.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_buttons.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_card.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_carousel.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_close.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_code.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_custom-forms.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_dropdown.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_forms.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_functions.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_grid.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_images.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_input-group.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_jumbotron.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_list-group.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_media.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_mixins.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_modal.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_nav.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_navbar.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_pagination.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_popover.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_print.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_progress.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_reboot.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_root.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_spinners.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_tables.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_toasts.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_tooltip.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_transitions.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_type.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_utilities.scss" />
+    <Content Include="Content\cart\scss\bootstrap\scss\_variables.scss" />
+    <Content Include="Content\cart\scss\style.scss" />
+    <Content Include="Content\cart\lib\owlcarousel\LICENSE" />
+    <EntityDeploy Include="Models\SachDT.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SachData.Designer.cs</LastGenOutput>
+      <LastGenOutput>SachDT.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\SachData.edmx.diagram">
-      <DependentUpon>SachData.edmx</DependentUpon>
+    <Content Include="Models\SachDT.edmx.diagram">
+      <DependentUpon>SachDT.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\cart\js\main.js" />
+    <Content Include="Scripts\cart\mail\contact.js" />
+    <Content Include="Scripts\cart\mail\contact.php" />
+    <Content Include="Scripts\cart\mail\jqBootstrapValidation.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -444,6 +689,7 @@
     <Content Include="Scripts\js\vendor\jquery-library.js" />
     <Content Include="Scripts\js\vendor\modernizr-2.8.3-respond-1.4.2.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\User\js\main.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -463,10 +709,17 @@
     <Content Include="Views\Book\SachChuDe.cshtml" />
     <Content Include="Views\Book\SachNXB.cshtml" />
     <Content Include="Views\Book\SachChiTiet.cshtml" />
+    <Content Include="Views\Cart\GioHangPartial.cshtml" />
+    <Content Include="Views\Cart\GioHang.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\Shared\_LayoutMainUser.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\LoginWas.cshtml" />
+    <Content Include="Views\Cart\XacNhanDon.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Cart\" />
+    <Folder Include="Views\Account\" />
     <Folder Include="Views\Sach\" />
   </ItemGroup>
   <ItemGroup>

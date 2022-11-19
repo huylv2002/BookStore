@@ -1,0 +1,19 @@
+﻿@using ThienLongBook.Models;
+@{
+    KhachHang kh = (KhachHang)Session["nguoiDung"];
+}
+
+
+<div class="tg-userlogin">
+    @if (Session["nguoiDung"] != null)
+    {
+        <figure><a href="javascript:void(0);"><img src="~/Content/Icon/user.png" alt="image description" style="width:30px; height: 30px"></a></figure>
+        <span><a href="javascript:void(0);">@kh.hoTenKH</a></span>
+        <span><a href="@Url.Action("LogOut", "User")" style="float: right;">Đăng xuất</a></span>
+    }
+    else
+    {
+        <figure><a href="javascript:void(0);"><img src="~/Content/Icon/user.png" alt="image description" style="width:30px; height: 30px"></a></figure>
+        <span><a href="@Url.Action("Login", "User")"><em>Đăng nhập</em></a></span>
+    }
+</div>

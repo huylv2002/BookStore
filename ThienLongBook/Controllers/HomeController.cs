@@ -11,7 +11,7 @@ namespace ThienLongBook.Controllers
     public class HomeController : Controller
     {
         ThienLongBookEntities data = new ThienLongBookEntities();
-       public ActionResult Index()
+        public ActionResult Index()
         {
             var dsSach = from s in data.Saches select s;
             return View(dsSach.ToList());

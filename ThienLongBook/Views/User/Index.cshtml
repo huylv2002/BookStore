@@ -1,0 +1,117 @@
+﻿@model IEnumerable<ThienLongBook.Models.Sach>
+@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_LayoutMainUser.cshtml";
+}
+
+
+
+<section class="tg-sectionspace tg-haslayout">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="tg-sectionhead">
+                    <h2><span>Được nhiều truy cập</span>SÁCH BÁN CHẠY</h2>
+                    <a class="tg-btn" href="javascript:void(0);">Xem tất cả</a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div id="tg-bestsellingbooksslider" class="tg-bestsellingbooksslider tg-bestsellingbooks owl-carousel">
+                    @foreach (var i in Model)
+                    {
+                        <div class="item">
+                            <div class="tg-postbook">
+                                <figure class="tg-featureimg">
+                                    <div class="tg-bookimg">
+                                        <div class="tg-frontcover"><img src="~/Content/Sach/@i.maCD/@i.hinhMinhHoa" alt="image description"></div>
+                                        <div class="tg-backcover"><img src="~/Content/Sach/@i.maCD/@i.hinhMinhHoa" alt="image description"></div>
+                                    </div>
+                                    <a class="tg-btnaddtowishlist" href="javascript:void(0);">
+                                        <i class="icon-heart"></i>
+                                        <span>Thêm vào danh sách</span>
+                                    </a>
+                                </figure>
+                                <div class="tg-postbookcontent">
+                                    <ul class="tg-bookscategories">
+                                        <li>
+                                            @switch (i.maCD)
+                                            {
+                                                case "SBC":<a href="@Url.Action("SachChuDe","Book", new { maCD = i.ChuDe })">Sách Bán Chạy</a> break;
+                                                case "SGK": <a href="@Url.Action("SachChuDe","Book", new { maCD = i.ChuDe })">Sách Giáo Khoa</a>break;
+                                                case "SKD": <a href="@Url.Action("SachChuDe","Book", new { maCD = i.ChuDe })">Sách Kinh Doanh</a>break;
+                                                case "SKNS": <a href="@Url.Action("SachChuDe","Book", new { maCD = i.ChuDe })">Sách Kỹ Năng Sống</a>break;
+                                                case "SLT": <a href="@Url.Action("SachChuDe","Book", new { maCD = i.ChuDe })">Sách Luyện Thi THPT Quốc Gia</a>break;
+                                                case "SM": <a href="@Url.Action("SachChuDe","Book", new { maCD = i.ChuDe })">Sách Mới</a>break;
+                                                case "SNN": <a href="@Url.Action("SachChuDe","Book", new { maCD = i.ChuDe })">Sách Ngoại Ngữ</a>break;
+                                                case "STK": <a href="@Url.Action("SachChuDe","Book", new { maCD = i.ChuDe })">Sách Tham Khảo</a>break;
+                                            }
+
+
+                                        </li>
+                                        <!--<li><a href="javascript:void(0);">Fun</a></li>-->
+                                    </ul>
+                                    <div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
+                                    <div class="tg-booktitle">
+                                        <h3><a href="@Url.Action("SachChiTiet","Book", new {maSach = i.maSach, url = Request.Url.ToString()})">@i.tenSach</a></h3>
+                                    </div>
+                                    <span class="tg-bookwriter">
+                                        Xuất bản:
+                                        @switch (i.maNXB.ToString())
+                                        {
+                                            case "NXBGDVN":<a href="@Url.Action("SachNXB","Book", new { maNXB = i.maNXB })">Nhà xuất bản Giáo dục Việt Nam</a> break;
+                                            case "NXBHNV": <a href="@Url.Action("SachNXB","Book", new {maNXB = i.maNXB })">Nhà xuất bản Hội Nhà Văn</a>break;
+                                            case "NXBKD": <a href="@Url.Action("SachNXB","Book", new { maNXB = i.maNXB })">Nhà xuất bản Kim Đồng</a>break;
+                                            case "NXBT": <a href="@Url.Action("SachNXB","Book", new { maNXB = i.maNXB})">Nhà xuất bản Trẻ</a>break;
+                                            case "NXBTHTPHCM": <a href="@Url.Action("SachNXB","Book", new { maNXB = i.maNXB})">Nhà xuất bản Tổng hợp thành phố Hồ Chí Minh</a>break;
+                                        }
+                                    </span>
+                                    <span class="tg-stars"><span></span></span>
+                                    <span class="tg-bookprice">
+                                        <ins>@string.Format("{0:0,####}", i.donGia) @i.donViTinh</ins>
+                                        <!-- <del>$27.20</del>-->
+                                    </span>
+                                    <a class="tg-btn tg-btnstyletwo" href="@Url.Action("ThemVaoGio", "Cart", new { maSach = i.maSach, url = Request.Url.ToString()})">
+                                        <i class="fa fa-shopping-basket"></i>
+                                        <em>Thêm vào giỏ</em>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="tg-bglight tg-haslayout">
+    <div class="container">
+        <div class="row">
+            <div class="tg-featureditm">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 hidden-sm hidden-xs">
+                    <figure><img src="~/Content/Sach/Them/img-2.png" alt="image description"></figure>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="tg-featureditmcontent">
+                        <div class="tg-themetagbox"><span class="tg-themetag">featured</span></div>
+                        <div class="tg-booktitle">
+                            <h3><a href="javascript:void(0);">Nhà Đầu Tư Thông Minh</a></h3>
+                        </div>
+                        <span class="tg-bookwriter">Tác giả: <a href="javascript:void(0);">Benjamin Graham</a></span>
+                        <span class="tg-stars"><span></span></span>
+                        <div class="tg-priceandbtn">
+                            <span class="tg-bookprice">
+                                <ins>250.0000đ</ins>
+                            </span>
+                            <a class="tg-btn tg-btnstyletwo tg-active" href="javascript:void(0);">
+                                <i class="fa fa-shopping-basket"></i>
+                                <em>Thêm vào giỏ</em>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

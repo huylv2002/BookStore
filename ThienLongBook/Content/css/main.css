@@ -830,7 +830,7 @@ body.tg-comingsoonpage .tg-wrapper{overflow:visible;}
 	border-radius: 50%;
 }
 .tg-userlogin span {
-	float: right;
+	float: left;
 	font-size: 14px;
 	line-height: 30px;
 	position: relative;
@@ -4140,4 +4140,4 @@ body.tg-comingsoonpage:before{
 .tg-comingsoonholder .tg-formnewsletter input{margin:0;}
 body.tg-comingsoonpage .tg-footer{border:0;}
 body.tg-comingsoonpage .tg-footerbar{position:static;}
-.tg-userlogin  figure a img {width: 30px; height: 30px;}
+.tg-userlogin  figure a img {width: 250px; height: 30px;}

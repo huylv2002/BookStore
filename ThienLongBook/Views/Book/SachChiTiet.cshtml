@@ -17,7 +17,7 @@
 }
 
 @{
-    ViewBag.Title = "Sách chi tiết" + tenSach;
+    ViewBag.Title = "Sách chi tiết " + tenSach;
     Layout = "~/Views/Shared/_LayoutMainNone.cshtml";
 }
 @{
@@ -77,7 +77,7 @@
                                                     <input type="text" class="result" value="0" id="quantity1" name="quantity">
                                                     <em class="plus">+</em>
                                                 </div>
-                                                <a class="tg-btn tg-active tg-btn-lg" href="javascript:void(0);">Thêm vào giỏ</a>
+                                                <a class="tg-btn tg-active tg-btn-lg" href="@Url.Action("ThemVaoGio", "Cart", new { maSach = Model.maSach, url = Request.Url.ToString()})">Thêm vào giỏ</a>
                                                 <a class="tg-btnaddtowishlist" href="javascript:void(0);">
                                                     <span>Yêu thích</span>
                                                 </a>
@@ -108,7 +108,7 @@
                                             </div>
                                             <div class="tg-description">
                                                 <p>
-                                                    @Html.Raw(Truncate(item.MoTa, 70).ToString())
+                                                    @Html.Raw(Truncate(Model.moTa, 70).ToString())
                                                     <a href="javascript:void(0);" onclick="More()">More</a>
                                                 </p>
                                             </div>

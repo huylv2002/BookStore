@@ -41,6 +41,17 @@ namespace ThienLongBook
                 url: "{controller}/{action}/{maSach}",
                 new { controller = "Book", action = "SachChiTiet", maSach = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "GioHang",
+                url: "{controller}/{action}/{maSach}",
+                new { controller = "Cart", action = "GioHang", maSach = UrlParameter.Optional}
+            );
+            routes.MapRoute(
+                name: "DatHang",
+                url: "{controller}/{action}",
+                new { controller = "Cart", action = "DatHang"}
+            );
         }
     }
 }

@@ -13,11 +13,12 @@ namespace ThienLongBook.Models
         public string sAnhBia { get; set; }
         public double dDonGia { get; set; }
         public int iSoLuong { get; set; }
+
+        public string iMaCD { get; set; }
         public double dThanhToan
         {
             get { return iSoLuong * dDonGia; }
         }
-
         public GioHang(int ms)
         {
             iMaSach = ms;
@@ -26,6 +27,7 @@ namespace ThienLongBook.Models
             sAnhBia = s.hinhMinhHoa;
             dDonGia = double.Parse(s.donGia.ToString());
             iSoLuong = 1;
+            iMaCD = s.maCD;
         }
     }
 }

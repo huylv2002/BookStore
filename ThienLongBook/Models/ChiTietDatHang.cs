@@ -19,7 +19,9 @@ namespace ThienLongBook.Models
         public Nullable<int> soLuong { get; set; }
         public Nullable<decimal> giaBan { get; set; }
         public Nullable<decimal> thanhTien { get; set; }
+        public string maCTHD { get; set; }
     
         public virtual DonDatHang DonDatHang { get; set; }
+        public virtual Sach Sach { get; set; }
     }
 }
