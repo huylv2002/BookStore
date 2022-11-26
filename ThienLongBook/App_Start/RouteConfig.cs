@@ -15,8 +15,8 @@ namespace ThienLongBook
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }, namespaces: new[] { "ThienLongBook.Controllers" }
+            ) ;
 
 
             routes.MapRoute(
@@ -51,6 +51,11 @@ namespace ThienLongBook
                 name: "DatHang",
                 url: "{controller}/{action}",
                 new { controller = "Cart", action = "DatHang"}
+            );
+            routes.MapRoute(
+                name: "DangKy",
+                url: "{controller}/{action}",
+                new { controller = "User", action = "Register" }
             );
         }
     }

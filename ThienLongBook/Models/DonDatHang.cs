@@ -32,8 +32,8 @@ namespace ThienLongBook.Models
         public Nullable<bool> hTThanhtoan { get; set; }
         public Nullable<bool> hTGiaoHang { get; set; }
     
+        public virtual KhachHang KhachHang { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietDatHang> ChiTietDatHangs { get; set; }
-        public virtual KhachHang KhachHang { get; set; }
     }
 }

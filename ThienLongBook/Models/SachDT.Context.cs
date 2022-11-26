@@ -26,6 +26,7 @@ namespace ThienLongBook.Models
         }
     
         public virtual DbSet<ADMIN> ADMINs { get; set; }
+        public virtual DbSet<ChiTietDatHang> ChiTietDatHangs { get; set; }
         public virtual DbSet<ChiTietThamDo> ChiTietThamDoes { get; set; }
         public virtual DbSet<ChuDe> ChuDes { get; set; }
         public virtual DbSet<DonDatHang> DonDatHangs { get; set; }
@@ -33,9 +34,10 @@ namespace ThienLongBook.Models
         public virtual DbSet<NhaXuatBan> NhaXuatBans { get; set; }
         public virtual DbSet<QuangCao> QuangCaos { get; set; }
         public virtual DbSet<Sach> Saches { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TacGia> TacGias { get; set; }
         public virtual DbSet<ThamDo> ThamDoes { get; set; }
-        public virtual DbSet<ChiTietDatHang> ChiTietDatHangs { get; set; }
         public virtual DbSet<VietSach> VietSaches { get; set; }
+        public virtual DbSet<GioHang> GioHangs { get; set; }
     }
 }

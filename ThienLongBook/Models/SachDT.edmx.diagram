@@ -4,27 +4,28 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9ed6a0e894f840b5ab04763388301a7a" Name="Diagram1">
-        <EntityTypeShape EntityType="ThienLongBookModel.ADMIN" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ThienLongBookModel.ChiTietThamDo" Width="1.5" PointX="10" PointY="0.875" IsExpanded="true" />
+      <Diagram DiagramId="7b41f5de5a514c1fbcf76c2ac94853b4" Name="Diagram1">
+        <EntityTypeShape EntityType="ThienLongBookModel.ADMIN" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThienLongBookModel.ChiTietDatHang" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThienLongBookModel.ChiTietThamDo" Width="1.5" PointX="8" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ThienLongBookModel.ChuDe" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ThienLongBookModel.DonDatHang" Width="1.5" PointX="8" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ThienLongBookModel.KhachHang" Width="1.5" PointX="5.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThienLongBookModel.DonDatHang" Width="1.5" PointX="8" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThienLongBookModel.KhachHang" Width="1.5" PointX="5.75" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="ThienLongBookModel.NhaXuatBan" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="ThienLongBookModel.QuangCao" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ThienLongBookModel.Sach" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThienLongBookModel.sysdiagram" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ThienLongBookModel.TacGia" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="ThienLongBookModel.ThamDo" Width="1.5" PointX="7.75" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ThienLongBookModel.ChiTietDatHang" Width="1.5" PointX="10.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThienLongBookModel.ThamDo" Width="1.5" PointX="5.75" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ThienLongBookModel.VietSach" Width="1.5" PointX="5.25" PointY="2" IsExpanded="true" />
         <AssociationConnector Association="ThienLongBookModel.FK_ChiTietThamDo_ThamDo" ManuallyRouted="false" />
         <AssociationConnector Association="ThienLongBookModel.FK_Sach_ChuDe" ManuallyRouted="false" />
-        <AssociationConnector Association="ThienLongBookModel.FK_ChiTietDatHang_DonDatHang" ManuallyRouted="false" />
         <AssociationConnector Association="ThienLongBookModel.FK_DonDatHang_KhachHang" ManuallyRouted="false" />
         <AssociationConnector Association="ThienLongBookModel.FK_Sach_NhaXuatBan" ManuallyRouted="false" />
         <AssociationConnector Association="ThienLongBookModel.FK_VietSach_Sach" ManuallyRouted="false" />
         <AssociationConnector Association="ThienLongBookModel.FK_VietSach_TacGia" ManuallyRouted="false" />
-        <AssociationConnector Association="ThienLongBookModel.FK_ChiTietDatHang_Sach" />
+        <EntityTypeShape EntityType="ThienLongBookModel.GioHang" Width="1.5" PointX="10.375" PointY="3.75" />
+        <AssociationConnector Association="ThienLongBookModel.FK_ChiTietDatHang_DonDatHang1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

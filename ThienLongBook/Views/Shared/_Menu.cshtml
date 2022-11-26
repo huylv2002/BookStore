@@ -15,19 +15,21 @@
 
                                 <div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
                                     <ul>
-                                                                  
+
                                         <li>
                                             <a href="@Url.Action("Index","Home")">Trang Chủ</a>
                                         </li>
-                                        <li class="menu-item-has-children">
-                                            <a href="javascript:void(0);">Authors</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="authors.html">Authors</a></li>
-                                                <li><a href="authordetail.html">Author Detail</a></li>
-                                            </ul>
-                                        </li>
+                                        <!--<li class="menu-item-has-children">
+        <a href="javascript:void(0);">Authors</a>
+        <ul class="sub-menu">
+            <li><a href="authors.html">Authors</a></li>
+            <li><a href="authordetail.html">Author Detail</a></li>
+        </ul>
+    </li>-->
                                         <li><a href="@Url.Action("Index","Book",new {page = 1}) ">Sách</a></li>
-                                        <li><a href="products.html">Weekly Sale</a></li>
+                                        <li><a href="@Url.Action("SachChuDe","Book", new { maCD = "SKD"})">Tài chính</a></li>
+                                        <li><a href="@Url.Action("SachChuDe","Book", new { maCD = "SGK"})">Học Sinh</a></li>
+                                        <li><a href="@Url.Action("TinTuc","Book")" >Tin Tức</a></li>
                                         <li class="menu-item-has-children">
                                             <a href="javascript:void(0);">Latest News</a>
                                             <ul class="sub-menu">

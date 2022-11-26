@@ -134,6 +134,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserAdController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\BookController.cs" />
@@ -156,7 +159,10 @@
     <Compile Include="Models\DonDatHang.cs">
       <DependentUpon>SachDT.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\GioHang.cs" />
+    <Compile Include="Models\GioHang.cs">
+      <DependentUpon>SachDT.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GioHangOn.cs" />
     <Compile Include="Models\KhachHang.cs">
       <DependentUpon>SachDT.tt</DependentUpon>
     </Compile>
@@ -184,6 +190,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SachDT.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>SachDT.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\TacGia.cs">
       <DependentUpon>SachDT.tt</DependentUpon>
     </Compile>
@@ -196,6 +205,34 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Content\css\bootstrap.min.css" />
+    <Content Include="Areas\Admin\Content\css\style.css" />
+    <Content Include="Areas\Admin\Content\img\hieu.png" />
+    <Content Include="Areas\Admin\Content\img\testimonial-1.jpg" />
+    <Content Include="Areas\Admin\Content\img\testimonial-2.jpg" />
+    <Content Include="Areas\Admin\Content\img\user.jpg" />
+    <Content Include="Areas\Admin\Scripts\js\main.js" />
+    <Content Include="Areas\Admin\Scripts\lib\chart\chart.min.js" />
+    <Content Include="Areas\Admin\Scripts\lib\easing\easing.js" />
+    <Content Include="Areas\Admin\Scripts\lib\easing\easing.min.js" />
+    <Content Include="Areas\Admin\Scripts\lib\owlcarousel\assets\ajax-loader.gif" />
+    <Content Include="Areas\Admin\Scripts\lib\owlcarousel\assets\owl.carousel.css" />
+    <Content Include="Areas\Admin\Scripts\lib\owlcarousel\assets\owl.carousel.min.css" />
+    <Content Include="Areas\Admin\Scripts\lib\owlcarousel\assets\owl.theme.default.css" />
+    <Content Include="Areas\Admin\Scripts\lib\owlcarousel\assets\owl.theme.default.min.css" />
+    <Content Include="Areas\Admin\Scripts\lib\owlcarousel\assets\owl.theme.green.css" />
+    <Content Include="Areas\Admin\Scripts\lib\owlcarousel\assets\owl.theme.green.min.css" />
+    <Content Include="Areas\Admin\Scripts\lib\owlcarousel\assets\owl.video.play.png" />
+    <Content Include="Areas\Admin\Scripts\lib\owlcarousel\owl.carousel.js" />
+    <Content Include="Areas\Admin\Scripts\lib\owlcarousel\owl.carousel.min.js" />
+    <Content Include="Areas\Admin\Scripts\lib\tempusdominus\css\tempusdominus-bootstrap-4.css" />
+    <Content Include="Areas\Admin\Scripts\lib\tempusdominus\css\tempusdominus-bootstrap-4.min.css" />
+    <Content Include="Areas\Admin\Scripts\lib\tempusdominus\js\moment-timezone.min.js" />
+    <Content Include="Areas\Admin\Scripts\lib\tempusdominus\js\moment.min.js" />
+    <Content Include="Areas\Admin\Scripts\lib\tempusdominus\js\tempusdominus-bootstrap-4.js" />
+    <Content Include="Areas\Admin\Scripts\lib\tempusdominus\js\tempusdominus-bootstrap-4.min.js" />
+    <Content Include="Areas\Admin\Scripts\lib\waypoints\links.php" />
+    <Content Include="Areas\Admin\Scripts\lib\waypoints\waypoints.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -655,6 +692,96 @@
     <Content Include="Content\cart\scss\bootstrap\scss\_variables.scss" />
     <Content Include="Content\cart\scss\style.scss" />
     <Content Include="Content\cart\lib\owlcarousel\LICENSE" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\bootstrap-grid.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\bootstrap-reboot.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\bootstrap-utilities.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\bootstrap.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\forms\_floating-labels.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\forms\_form-check.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\forms\_form-control.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\forms\_form-range.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\forms\_form-select.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\forms\_form-text.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\forms\_input-group.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\forms\_labels.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\forms\_validation.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\helpers\_clearfix.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\helpers\_colored-links.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\helpers\_position.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\helpers\_ratio.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\helpers\_stretched-link.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\helpers\_text-truncation.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\helpers\_visually-hidden.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_alert.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_box-shadow.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_breakpoints.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_buttons.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_caret.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_clearfix.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_color-scheme.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_container.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_deprecate.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_forms.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_gradients.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_grid.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_image.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_list-group.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_lists.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_pagination.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_reset-text.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_resize.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_table-variants.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_text-truncate.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_transition.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_utilities.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\mixins\_visually-hidden.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\utilities\_api.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\vendor\_rfs.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_accordion.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_alert.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_badge.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_breadcrumb.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_button-group.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_buttons.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_card.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_carousel.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_close.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_containers.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_dropdown.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_forms.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_functions.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_grid.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_helpers.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_images.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_list-group.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_mixins.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_modal.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_nav.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_navbar.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_offcanvas.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_pagination.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_popover.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_progress.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_reboot.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_root.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_spinners.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_tables.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_toasts.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_tooltip.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_transitions.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_type.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_utilities.scss" />
+    <Content Include="Areas\Admin\Content\scss\bootstrap\scss\_variables.scss" />
+    <Content Include="Areas\Admin\Scripts\lib\owlcarousel\LICENSE" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\UserAd\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\CapNhatKhachHang.cshtml" />
     <EntityDeploy Include="Models\SachDT.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SachDT.Designer.cs</LastGenOutput>
@@ -716,9 +843,12 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\LoginWas.cshtml" />
     <Content Include="Views\Cart\XacNhanDon.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\User\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Views\Sach\" />
   </ItemGroup>

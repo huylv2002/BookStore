@@ -11,12 +11,12 @@ namespace ThienLongBook.Controllers
     {
         // GET: Cart
         ThienLongBookEntities data = new ThienLongBookEntities();
-        public List<GioHang> TrongGio()
+        public List<GioHangOn> TrongGio()
         {
-            List<GioHang> dsTrongGio = Session["dsTrongGio"] as List<GioHang>;
+            List<GioHangOn> dsTrongGio = Session["dsTrongGio"] as List<GioHangOn>;
             if(dsTrongGio == null)
             {
-                dsTrongGio = new List<GioHang>();
+                dsTrongGio = new List<GioHangOn>();
                 Session["dsTrongGio"] = dsTrongGio;
             }
             return dsTrongGio;
@@ -24,11 +24,11 @@ namespace ThienLongBook.Controllers
 
         public ActionResult ThemVaoGio(int maSach, string url)
         {
-            List<GioHang> dsTrongGio = TrongGio();
-            GioHang sp = dsTrongGio.Find(x => x.iMaSach == maSach);
+            List<GioHangOn> dsTrongGio = TrongGio();
+            GioHangOn sp = dsTrongGio.Find(x => x.iMaSach == maSach);
             if(sp == null)
             {
-                sp = new GioHang(maSach);
+                sp = new GioHangOn(maSach);
                 dsTrongGio.Add(sp);
             }
             else
@@ -40,39 +40,39 @@ namespace ThienLongBook.Controllers
 
         public ActionResult GiamSoLuong(int maSach)
         {
-            List<GioHang> dsTrongGio = TrongGio();
-            GioHang sp = dsTrongGio.Find(x => x.iMaSach == maSach);
+            List<GioHangOn> dsTrongGio = TrongGio();
+            GioHangOn sp = dsTrongGio.Find(x => x.iMaSach == maSach);
             if (sp == null)
             {
-                sp = new GioHang(maSach);
+                sp = new GioHangOn(maSach);
                 dsTrongGio.Add(sp);
             }
             else
             {
                 sp.iSoLuong--;
             }
-            return RedirectToAction("GioHang");
+            return RedirectToAction("GioHangOn");
         }
         public ActionResult TangSoLuong(int maSach)
         {
-            List<GioHang> dsTrongGio = TrongGio();
-            GioHang sp = dsTrongGio.Find(x => x.iMaSach == maSach);
+            List<GioHangOn> dsTrongGio = TrongGio();
+            GioHangOn sp = dsTrongGio.Find(x => x.iMaSach == maSach);
             if (sp == null)
             {
-                sp = new GioHang(maSach);
+                sp = new GioHangOn(maSach);
                 dsTrongGio.Add(sp);
             }
             else
             {
                 sp.iSoLuong++;
             }
-            return RedirectToAction("GioHang");
+            return RedirectToAction("GioHangOn");
         }
 
         public int TongSoLuong()
         {
             int iTongSoluong = 0;
-            List<GioHang> dsTrongGio = Session["dsTrongGio"] as List<GioHang>;
+            List<GioHangOn> dsTrongGio = Session["dsTrongGio"] as List<GioHangOn>;
             if(dsTrongGio != null)
             { 
                 iTongSoluong = dsTrongGio.Sum(n => n.iSoLuong);
@@ -85,7 +85,7 @@ namespace ThienLongBook.Controllers
         public double TongTien()
         {
             double iTongTien = 0;
-            List<GioHang> dsTrongGio = Session["dsTrongGio"] as List<GioHang>;
+            List<GioHangOn> dsTrongGio = Session["dsTrongGio"] as List<GioHangOn>;
             if(dsTrongGio != null)
             {
                 iTongTien = dsTrongGio.Sum(n => n.dThanhToan);
@@ -96,7 +96,7 @@ namespace ThienLongBook.Controllers
         public double TongTienTT()
         {
             double iTongTien = 0;
-            List<GioHang> dsTrongGio = Session["dsTrongGio"] as List<GioHang>;
+            List<GioHangOn> dsTrongGio = Session["dsTrongGio"] as List<GioHangOn>;
             double phiVanChuyen = (dsTrongGio.Sum(n => n.dThanhToan) / 100)*10;
             if (dsTrongGio != null)
             {
@@ -105,13 +105,13 @@ namespace ThienLongBook.Controllers
             return iTongTien;
         }
 
-        public ActionResult GioHang()
+        public ActionResult GioHangOn()
         {
             if(Session["nguoiDung"] == null)
             {
                 return RedirectToAction("Login","User");
             }
-            List<GioHang> dsTrongGio = TrongGio();
+            List<GioHangOn> dsTrongGio = TrongGio();
             if(dsTrongGio.Count() == 0)
             {
                 return RedirectToAction("Index", "Home");
@@ -122,9 +122,9 @@ namespace ThienLongBook.Controllers
             return View(dsTrongGio);
         }
 
-        public ActionResult GioHangPartial()
+        public ActionResult GioHangOnPartial()
         {
-            List<GioHang> dsTrongGio = TrongGio();
+            List<GioHangOn> dsTrongGio = TrongGio();
             if(dsTrongGio == null)
             {
                 ViewBag.tongSoLuong = 0; ;
@@ -140,8 +140,8 @@ namespace ThienLongBook.Controllers
 
         public ActionResult XoaTrongGio(int maSach)
         {
-            List<GioHang> dsTronGio = TrongGio();
-            GioHang sp = dsTronGio.SingleOrDefault(n => n.iMaSach == maSach);
+            List<GioHangOn> dsTronGio = TrongGio();
+            GioHangOn sp = dsTronGio.SingleOrDefault(n => n.iMaSach == maSach);
             if(sp != null)
             {
                 dsTronGio.RemoveAll(n => n.iMaSach == maSach);
@@ -150,7 +150,7 @@ namespace ThienLongBook.Controllers
                     return RedirectToAction("Index", "Home");
                 }
             }
-            return RedirectToAction("GioHang");
+            return RedirectToAction("GioHangOn");
         }
 
         public ActionResult XoaTatCaTrongGio()
@@ -165,7 +165,7 @@ namespace ThienLongBook.Controllers
         {
             DonDatHang ddh = new DonDatHang();
             KhachHang kh = Session["nguoiDung"] as KhachHang;
-            List<GioHang> dsTrongGio = TrongGio();
+            List<GioHangOn> dsTrongGio = TrongGio();
             ddh.maKH = kh.maKH;
             ddh.ngayDH = DateTime.Now;
             ddh.triGia = decimal.Parse(TongTienTT().ToString());

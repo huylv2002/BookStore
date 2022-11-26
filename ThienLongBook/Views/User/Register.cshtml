@@ -1,0 +1,118 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = null;
+}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<body style="background-color: deepskyblue; margin-top: 50px">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Đăng ký</div>
+                    <div class="card-body">
+
+                        <form class="form-horizontal" method="post" action="Register">
+
+                            <div class="form-group">
+                                <label for="name" class="cols-sm-2 control-label">Họ tên:</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                        <input type="text" class="form-control" name="hoTen" id="name" placeholder="Nhập tên của bạn..." />
+                                        <a>@ViewBag.hoTenErr</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="cols-sm-2 control-label">Email:</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                        <input type="text" class="form-control" name="email" id="email" placeholder="Nhập email của bạn..." />
+                                        <a>@ViewBag.emailErr</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="username" class="cols-sm-2 control-label">Tài khoản</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                                        <input type="text" class="form-control" name="taiKhoanKH" id="username" placeholder="tên đăng nhập..." />
+                                        <a>@ViewBag.taiKhoanErr</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="cols-sm-2 control-label">Mật khẩu:</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                        <input type="password" class="form-control" name="matKhau" id="password" placeholder="Nhập mật khẩu" />
+                                        <a>@ViewBag.matKhauErr</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm" class="cols-sm-2 control-label">Số điện thoại:</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                        <input type="number" class="form-control" name="sdt" id="confirm" placeholder="nhập số điện thoại" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm" class="cols-sm-2 control-label">Ngày sinh</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                        <input type="date" class="form-control" name="ngaySinh" id="ngaySinh" placeholder="dd/mm/yyyy" />
+                                        <a>@ViewBag.ngaySinhErr</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm" class="cols-sm-2 control-label">Giới tính</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                        <input name="gender" type="radio" value="Nam" />Nam
+                                        &emsp;
+                                        <input name="gender" type="radio" value="Nữ" />Nữ
+                                    </div>
+                                    <a>@ViewBag.gioiTinhErr</a>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm" class="cols-sm-2 control-label">Địa chỉ:</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                        <input type="text" class="form-control" name="diaChi" id="diaChi" placeholder="Nhập địa chỉ của bạn..." />
+                                        <a>@ViewBag.diaChiErr</a>
+                                    </div>
+                                </div>
+                            </div>
+                            @ViewBag.thongBao
+                            <div class="form-group ">
+                                <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Đăng ký</button>
+                            </div>
+                            <div class="login-register">
+                                <a href="@Url.Action("Login","User")">Login</a>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>

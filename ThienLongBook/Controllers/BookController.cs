@@ -44,6 +44,7 @@ namespace ThienLongBook.Controllers
         {
             TempData["dsSach"] = (from s in data.Saches select s).ToList();
             var dsSach = (from s in data.Saches where s.maSach == maSach select s).SingleOrDefault();
+            TempData["dsChuDe"] = (from s in data.ChuDes select s).ToList();
             return View(dsSach);
         }
     }

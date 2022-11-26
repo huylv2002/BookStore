@@ -18,7 +18,6 @@ namespace ThienLongBook.Models
         public Sach()
         {
             this.VietSaches = new HashSet<VietSach>();
-            this.ChiTietDatHangs = new HashSet<ChiTietDatHang>();
         }
     
         public int maSach { get; set; }
@@ -38,7 +37,5 @@ namespace ThienLongBook.Models
         public virtual NhaXuatBan NhaXuatBan { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VietSach> VietSaches { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietDatHang> ChiTietDatHangs { get; set; }
     }
 }
